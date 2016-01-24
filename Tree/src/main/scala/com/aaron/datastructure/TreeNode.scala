@@ -13,6 +13,7 @@ class TreeNode {
 object TreeNode{
   var root: TreeNode = _
 
+  //插入节点
   def insertTreeNode(currentNode:TreeNode, newNode: TreeNode):Unit = {
     if(root eq null){
       root = newNode
@@ -35,11 +36,45 @@ object TreeNode{
     }
   }
 
+  // 打印节点
   def printNode(root: TreeNode): Unit ={
     if(!(root eq null)){
       println(root.value)
       printNode(root.left)
       printNode(root.right)
     }
+  }
+
+  // 中序遍历
+  def inOrderTraverse(root: TreeNode): Unit ={
+    if(!(root eq null)){
+      println(root.value)
+      inOrderTraverse(root.left)
+      inOrderTraverse(root.right)
+    }
+  }
+
+  // 先序遍历
+  def preOrderTraverse(root: TreeNode): Unit ={
+    if(!(root eq null)){
+      printNode(root.left)
+      println(root.value)
+      printNode(root.right)
+    }
+  }
+
+  // 后序遍历
+  def afOrderTraverse(root: TreeNode): Unit ={
+    if(!(root eq null)){
+      printNode(root.left)
+      printNode(root.right)
+      println(root.value)
+    }
+  }
+
+  // 查找节点在当前二叉树中的深度
+  def findLevel(node: TreeNode): Int = {
+    val level = 0
+
   }
 }
